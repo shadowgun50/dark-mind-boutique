@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#09090d">
+<meta name="description" content="DARK MIND : guides numériques sur la confiance, la communication et les relations saines.">
+<title>DARK MIND | Comprends les relations</title>
+<style>
+:root{--bg:#09090d;--panel:#14141b;--panel2:#1b1720;--text:#f7f4f7;--muted:#aaa5b1;--red:#df3450;--gold:#d9b978;--line:#302b35}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#09090deF;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}.logo{font-weight:950;letter-spacing:.16em}.logo span{color:var(--red)}
+.navlinks{display:flex;gap:24px;color:#d5d0d9;font-size:.92rem}.cart,.btn,.smallbtn{cursor:pointer;font-weight:800}
+.cart{border:1px solid #62404a;padding:9px 14px;border-radius:999px;background:#1b1419;color:white}
+.hero{padding:88px 0 74px;background:radial-gradient(ellipse at 80% 15%,#70192c44,transparent 42%),linear-gradient(130deg,#09090d,#121018 62%,#1b0d13)}
+.kicker{color:var(--gold);text-transform:uppercase;letter-spacing:.19em;font-size:.73rem;font-weight:900}
+h1{font-size:clamp(2.7rem,7vw,5.7rem);line-height:.98;letter-spacing:-.055em;max-width:800px;margin:18px 0}
+h1 em{font-style:normal;color:var(--red)}.lead{max-width:650px;color:#c7c1cc;font-size:1.08rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:9px;border:1px solid transparent}
+.primary{background:var(--red);color:white}.secondary{border-color:#59434b;background:#17141a;color:#f5edf0}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;color:#aaa4af;font-size:.85rem}
+section{padding:70px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;letter-spacing:-.04em;margin:8px 0}
+.sub{color:var(--muted);max-width:590px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(155deg,#1a1921,#111116);border:1px solid var(--line);border-radius:15px;overflow:hidden;display:flex;flex-direction:column}
+.cover{height:155px;padding:20px;display:flex;align-items:end;background:radial-gradient(circle at 80% 20%,#a62a4055,transparent 35%),linear-gradient(135deg,#29131d,#101015)}
+.cover.gold{background:radial-gradient(circle at 80% 20%,#b38b4c55,transparent 35%),linear-gradient(135deg,#292116,#101015)}
+.cover.purple{background:radial-gradient(circle at 80% 20%,#6948a755,transparent 35%),linear-gradient(135deg,#21182b,#101015)}
+.cover b{font-size:1.4rem;letter-spacing:.12em}.cardbody{padding:19px;display:flex;flex-direction:column;flex:1}
+.tag{color:var(--gold);font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.card h3{font-size:1.18rem;margin:8px 0}.card p{color:var(--muted);font-size:.91rem;margin:0 0 18px}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:10px}.price{font-size:1.2rem;font-weight:950}
+.smallbtn{background:#2a171e;border:1px solid #71313f;color:#fff;padding:9px 12px;border-radius:8px}
+.band{background:linear-gradient(100deg,#1a1118,#17151b);border-block:1px solid var(--line)}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:27px}
+.feature{padding:21px;border:1px solid var(--line);border-radius:13px;background:#111116}.icon{font-size:1.5rem}
+.feature h3{margin:9px 0 5px}.feature p{color:var(--muted);margin:0;font-size:.91rem}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:center}
+.quote{padding:27px;border-left:3px solid var(--red);background:#151319;color:#ded7e1;border-radius:0 12px 12px 0;font-size:1.05rem}
+footer{border-top:1px solid var(--line);padding:27px 0;color:#918c98;font-size:.85rem}
+.overlay{position:fixed;inset:0;background:#000b;display:none;z-index:20;justify-content:flex-end}.overlay.open{display:flex}
+.drawer{width:min(470px,100%);height:100%;background:#111116;padding:23px;overflow:auto;border-left:1px solid var(--line)}
+.drawerhead{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:white;font-size:1.7rem;cursor:pointer}
+.cartitem{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.total{display:flex;justify-content:space-between;font-weight:950;font-size:1.15rem;padding:18px 0}
+.empty{color:var(--muted);padding:22px 0}.notice{font-size:.78rem;color:#aaa3b0;margin-top:13px}
+.form{display:grid;gap:11px;margin-top:18px}.form label{font-size:.85rem;color:#d6d0da}
+input,select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #3c3541;background:#0c0c11;color:white;font:inherit}
+textarea{min-height:75px;resize:vertical}.form .btn{width:100%;border:0}
+hr{border:0;border-top:1px solid var(--line);margin:8px 0}
+@media(max-width:760px){.navlinks{display:none}.grid,.features,.about{grid-template-columns:1fr}.hero{padding:64px 0 54px}.section-head{display:block}.section-head .sub{margin-top:12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#">DARK<span>·</span>MIND</a>
+<div class="navlinks"><a href="#boutique">Boutique</a><a href="#approche">Notre approche</a><a href="#contact">Contact</a></div>
+<button class="cart" onclick="toggleCart()">Panier <span id="count">0</span></button>
+</nav></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="kicker">Psychologie · Communication · Relations</div>
+<h1>Comprends les relations.<br><em>Maîtrise ta présence.</em></h1>
+<p class="lead">Des guides numériques pour développer ton assurance, mieux communiquer et construire des relations fondées sur l'attirance, le respect et le consentement.</p>
+<div class="actions"><a class="btn primary" href="#boutique">Découvrir les guides</a><a class="btn secondary" href="#approche">Notre philosophie</a></div>
+<div class="trust"><span>✦ Guides pratiques en PDF</span><span>✦ Lecture à ton rythme</span><span>✦ Approche responsable</span></div>
+</div></section>
+<section id="boutique"><div class="wrap">
+<div class="section-head"><div><div class="kicker">La collection</div><h2>Les guides DARK MIND</h2></div><p class="sub">Des ressources concrètes pour progresser dans tes conversations et tes relations. Les prix et contenus sont à confirmer avant le lancement.</p></div>
+<div class="grid" id="products"></div>
+</div></section>
+<section class="band" id="approche"><div class="wrap">
+<div class="kicker">Notre approche</div><h2>Du charisme, pas du contrôle.</h2>
+<p class="sub">La psychologie aide à mieux se comprendre et à repérer les comportements malsains. Elle ne doit pas servir à manipuler, culpabiliser ou forcer quelqu'un.</p>
+<div class="features">
+<div class="feature"><div class="icon">🧠</div><h3>Comprendre</h3><p>Explorer les émotions, les signaux sociaux et les dynamiques relationnelles sans prétendre lire dans les pensées.</p></div>
+<div class="feature"><div class="icon">💬</div><h3>Communiquer</h3><p>Ouvrir une conversation, écouter, exprimer son intérêt et accueillir librement la réponse.</p></div>
+<div class="feature"><div class="icon">🛡️</div><h3>Se respecter</h3><p>Développer ses limites, reconnaître la manipulation et construire une confiance durable.</p></div>
+</div></div></section>
+<section><div class="wrap about">
+<div><div class="kicker">Pourquoi DARK MIND ?</div><h2>Une présence qui vient de l'intérieur.</h2><p class="sub">Pas de formule magique pour séduire. On mise sur des compétences qui durent : confiance, clarté, empathie, conversation et respect mutuel.</p></div>
+<div class="quote">« Le vrai charisme ne consiste pas à prendre le pouvoir sur quelqu'un. Il consiste à être à l'aise avec soi-même et à créer un échange où chacun est libre. »</div>
+</div></section>
+</main>
+<footer id="contact"><div class="wrap"><b>DARK·MIND © 2026</b><p>Contact commercial : WhatsApp +225 07 58 16 10 99.</p><p class="notice">Les commandes sont envoyées par WhatsApp. Le paiement est confirmé manuellement par le vendeur et le PDF est transmis après confirmation. Aucun paiement automatique n’est activé.</p></div></footer>
+
+<div class="overlay" id="cartpanel" onclick="if(event.target===this)toggleCart()"><div class="drawer">
+<div class="drawerhead"><h2>Ton panier</h2><button class="close" onclick="toggleCart()">×</button></div>
+<div id="cartitems"><p class="empty">Ton panier est vide pour le moment.</p></div>
+<div class="total"><span>Total indicatif</span><span id="total">0 FCFA</span></div>
+<hr>
+<form class="form" id="orderForm">
+<label>Ton nom<input id="customerName" required placeholder="Nom et prénom"></label>
+<label>Ton numéro de téléphone<input id="customerPhone" required type="tel" placeholder="Ex. 07 00 00 00 00"></label>
+<label>Ville / commune<input id="customerCity" placeholder="Ex. Abidjan, Cocody"></label>
+<label>Moyen de paiement souhaité
+<select id="payment" required><option value="">Choisir une option</option><option>Orange Money</option><option>Wave</option><option>MTN Mobile Money</option></select></label>
+<label>Message (facultatif)<textarea id="customerNote" placeholder="Une précision sur ta commande..."></textarea></label>
+<button class="btn primary" type="submit">Envoyer ma commande sur WhatsApp</button>
+</form>
+<p class="notice">Étape de précommande : tu recevras les instructions de paiement après échange avec le vendeur. Ne verse rien avant d'avoir vérifié les informations du vendeur.</p>
+</div></div>
+<script>
+const WHATSAPP_NUMBER = "2250758161099"; // À remplacer par le numéro WhatsApp du vendeur, sans le signe +
+const products=[
+{id:1,name:"L'art de la séduction saine",tag:"Pack essentiel",desc:"E-book PDF en 9 chapitres : confiance, approche naturelle, conversation, signaux d’intérêt, invitation, limites et plan pratique sur 7 jours.",price:3000,cover:""},
+{id:2,name:"Psychologie des relations",tag:"Comprendre",desc:"Attachement, émotions, limites personnelles et compréhension des dynamiques relationnelles.",price:3500,cover:"gold"},
+{id:3,name:"Détecter la manipulation",tag:"Esprit critique",desc:"Reconnaître les tactiques de pression, poser ses limites et protéger son équilibre émotionnel.",price:4000,cover:"purple"},
+{id:4,name:"Conversation & charisme",tag:"Communication",desc:"Trouver les bons sujets, relancer naturellement et exprimer son intérêt avec assurance.",price:2500,cover:"gold"},
+{id:5,name:"Confiance masculine",tag:"Développement personnel",desc:"Travailler sa présence, son estime personnelle et gérer le rejet avec maturité.",price:3000,cover:""},
+{id:6,name:"Le bundle DARK MIND",tag:"Pack complet",desc:"Les cinq guides réunis dans une collection numérique à prix de lancement.",price:12000,cover:"purple"}
+];
+let cart=[];
+const fmt=n=>new Intl.NumberFormat('fr-FR').format(n)+' FCFA';
+document.getElementById('products').innerHTML=products.map(p=>`<article class="card"><div class="cover ${p.cover}"><b>DM / 0${p.id}</b></div><div class="cardbody"><div class="tag">${p.tag}</div><h3>${p.name}</h3><p>${p.desc}</p><div class="price-row"><span class="price">${fmt(p.price)}</span><button class="smallbtn" onclick="add(${p.id})">Ajouter +</button></div>${p.id===1?`<p class="notice" style="margin-top:12px">PDF · 9 chapitres · Programme pratique de 7 jours<br>Commande via WhatsApp. Le PDF est envoyé après confirmation du paiement.</p>`:""}</div></article>`).join('');
+function add(id){const p=products.find(x=>x.id===id);const found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({...p,qty:1});renderCart();document.getElementById('cartpanel').classList.add('open')}
+function renderCart(){document.getElementById('count').textContent=cart.reduce((s,p)=>s+p.qty,0);document.getElementById('cartitems').innerHTML=cart.length?cart.map(p=>`<div class="cartitem"><div><b>${p.name}</b><div class="notice">Quantité : ${p.qty}</div></div><div>${fmt(p.price*p.qty)}<br><button class="smallbtn" style="margin-top:6px" onclick="removeItem(${p.id})">Retirer</button></div></div>`).join(''):'<p class="empty">Ton panier est vide pour le moment.</p>';document.getElementById('total').textContent=fmt(cart.reduce((s,p)=>s+p.price*p.qty,0))}
+function removeItem(id){cart=cart.filter(p=>p.id!==id);renderCart()}
+function toggleCart(){document.getElementById('cartpanel').classList.toggle('open')}
+document.getElementById('orderForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ if(!cart.length){alert("Ajoute au moins un guide dans ton panier.");return;}
+ if(WHATSAPP_NUMBER==="225000000000"){alert("La boutique doit d'abord être configurée avec le vrai numéro WhatsApp du vendeur.");return;}
+ const lines=cart.map(p=>`- ${p.name} x${p.qty} : ${fmt(p.price*p.qty)}`).join('\n');
+ const total=cart.reduce((s,p)=>s+p.price*p.qty,0);
+ const msg=`Bonjour DARK MIND, je souhaite commander :\n${lines}\nTotal indicatif : ${fmt(total)}\n\nNom : ${customerName.value}\nTéléphone : ${customerPhone.value}\nVille : ${customerCity.value||"Non précisée"}\nPaiement souhaité : ${payment.value}\nMessage : ${customerNote.value||"Aucun"}\n\nMerci de m'indiquer la procédure de paiement et de livraison.`;
+ window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');
+});
+</script>
+</body></html>
